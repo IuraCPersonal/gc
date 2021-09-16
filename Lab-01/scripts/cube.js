@@ -104,6 +104,7 @@ function initBuffers(gl) {
   // Now set up the colors for the faces. We'll use solid colors
   // for each face.
 
+  //Random color generator
   const faceColors = [
     [Math.random(), Math.random(), Math.random(), 1.0 ], // Front face
     [Math.random(), Math.random(), Math.random(), 1.0], // Back face
