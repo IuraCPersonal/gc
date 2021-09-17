@@ -41,15 +41,11 @@ function main() {
   // Here's where we call the routine that builds all the
   // objects we'll be drawing.
   const buffers = initBuffers(gl);
-  var then = 0;
 
   // Draw the scene repeatedly
-  function render(now) {
-    now *= 0.001; // convert to seconds
-    const deltaTime = now - then;
-    then = now;
-
-    drawScene(gl, programInfo, buffers, deltaTime);
+  function render() {
+    drawScene(gl, programInfo, buffers);
+    drawScene(gl, programInfo, buffers);
 
     requestAnimationFrame(render);
   }
@@ -104,7 +100,7 @@ function initBuffers(gl) {
   // Now set up the colors for the faces. We'll use solid colors
   // for each face.
 
-  //Random color generator
+  // Random color generator
   const faceColors = [
     [Math.random(), Math.random(), Math.random(), 1.0], // Front face
     [Math.random(), Math.random(), Math.random(), 1.0], // Front face
@@ -141,42 +137,8 @@ function initBuffers(gl) {
   // position.
 
   const indices = [
-    0,
-    1,
-    2,
-    0,
-    2,
-    3, // front
-    4,
-    5,
-    6,
-    4,
-    6,
-    7, // back
-    8,
-    9,
-    10,
-    8,
-    10,
-    11, // top
-    12,
-    13,
-    14,
-    12,
-    14,
-    15, // bottom
-    16,
-    17,
-    18,
-    16,
-    18,
-    19, // right
-    20,
-    21,
-    22,
-    20,
-    22,
-    23, // left
+    0, 1, 2, 0, 2, 3, 4, 5, 6, 4, 6, 7, 8, 9, 10, 8, 10, 11, 12, 13, 14, 12, 14,
+    15, 16, 17, 18, 16, 18, 19, 20, 21, 22, 20, 22, 23,
   ];
 
   // Now send the element array to GL
@@ -197,7 +159,7 @@ function initBuffers(gl) {
 //
 // Draw the scene.
 //
-function drawScene(gl, programInfo, buffers, deltaTime) {
+function drawScene(gl, programInfo, buffers) {
   gl.clearColor(1.0, 1.0, 1.0, 1.0); // Clear to black, fully opaque
   gl.clearDepth(1.0); // Clear everything
   gl.enable(gl.DEPTH_TEST); // Enable depth testing
@@ -322,8 +284,4 @@ function drawScene(gl, programInfo, buffers, deltaTime) {
     const offset = 0;
     gl.drawElements(gl.TRIANGLES, vertexCount, type, offset);
   }
-
-  // Update the rotation for the next draw
-
-  cubeRotation += deltaTime;
 }
