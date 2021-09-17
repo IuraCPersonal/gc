@@ -2,12 +2,6 @@
 
 ### How Git works
 
----
-
-https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners
-
-### …or create a new repository on the command line
-
 ```
 git init
 git add README.md
