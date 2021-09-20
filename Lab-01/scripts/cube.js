@@ -74,15 +74,15 @@ function initBuffers(gl) {
 
   // Initialize event handlers
 
-  document.getElementById("customRange1").onchange = e => {
+  document.getElementById("customRange1").oninput = e => {
     view_x = e.target.value / 10;
   }
 
-  document.getElementById("customRange2").onchange = e => {
+  document.getElementById("customRange2").oninput = e => {
     view_y = e.target.value / 10;
   }
 
-  document.getElementById("customRange3").onchange = e => {
+  document.getElementById("customRange3").oninput = e => {
     view_z = e.target.value / 10;
   }
 
