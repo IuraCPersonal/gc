@@ -1,6 +1,9 @@
 "use strict";
 
 var cubeRotation = 0.0;
+var view_x = 0;
+var view_y = 0;
+var view_z = 0;
 
 //
 // Start here
@@ -37,7 +40,7 @@ function main() {
       modelViewMatrix: gl.getUniformLocation(shaderProgram, "uModelViewMatrix"),
     },
   };
-  //Comentariu
+
   // Here's where we call the routine that builds all the
   // objects we'll be drawing.
   const buffers = initBuffers(gl);
@@ -68,6 +71,20 @@ function initBuffers(gl) {
   // operations to from here out.
 
   gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+
+  // Initialize event handlers
+
+  document.getElementById("customRange1").onchange = e => {
+    view_x = e.target.value / 10;
+  }
+
+  document.getElementById("customRange2").onchange = e => {
+    view_y = e.target.value / 10;
+  }
+
+  document.getElementById("customRange3").onchange = e => {
+    view_z = e.target.value / 10;
+  }
 
   // Now create an array of positions for the cube.
 
@@ -201,19 +218,19 @@ function drawScene(gl, programInfo, buffers) {
   mat4.rotate(
     modelViewMatrix, // destination matrix
     modelViewMatrix, // matrix to rotate
-    0.5, // amount to rotate in radians
+    view_z, // amount to rotate in radians
     [0, 0, 1]
   ); // axis to rotate around (Z)
   mat4.rotate(
     modelViewMatrix, // destination matrix
     modelViewMatrix, // matrix to rotate
-    0.7, // amount to rotate in radians
+    view_x, // amount to rotate in radians
     [0, 1, 0]
   ); // axis to rotate around (X)
   mat4.rotate(
     modelViewMatrix, // destination matrix
     modelViewMatrix, // matrix to rotate
-    0.7, // amount to rotate in radians
+    view_y, // amount to rotate in radians
     [1, 0, 0]
   ); // axis to rotate around (Y)
 
