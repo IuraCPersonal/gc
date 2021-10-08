@@ -1,11 +1,8 @@
-* {
-    margin: 0 auto;
+canvas {
+  padding: 0;
+  display: block;
 }
 
-canvas#gl-canvas {
-    margin-left: 25%;
-}
-
-input[type="range"] {
-    width:400px;
+#editor {
+  margin-top: 5%;
 }

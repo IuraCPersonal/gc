@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- vertex-shader  -->
+  <script id="vertex-shader" type="x-shader/x-vertex">
+    attribute vec4 aVertexPosition;
+    attribute vec4 aVertexColor;
+                
+    uniform mat4 uModelViewMatrix;
+    uniform mat4 uProjectionMatrix;
+        
+    varying lowp vec4 vColor;
+
+    void main(void) {
+        gl_Position = uProjectionMatrix * uModelViewMatrix * aVertexPosition;
+				vColor = aVertexColor;
+    }
+  </script>
+
+  <!-- fragment shader code block -->
+  <script id="fragment-shader" type="x-shader/x-fragment">
+    precision mediump float;
+
+    varying lowp vec4 vColor;
+
+    void main(void) {
+        gl_FragColor = vColor;
+    }
+  </script>
+
+  <!-- including all scripts needed -->
+  <script type="text/javascript" src="common/webgl-utils.js"></script>
+  <script type="text/javascript" src="common/initShaders.js"></script>
+  <script type="text/javascript" src="common/MV.js"></script>
+  <script type="text/javascript" src="common/gl-matrix-min.js"></script>
+  <script type="text/javascript" src="common/webgl-debug.js"></script>
+  <script type="text/javascript" src="scripts/main.js"></script>
+
+  <title>GC LAB 01</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Laboratory Work 1</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        </ul>
+        <form class="d-flex">
+          <button class="btn btn-outline-success" type="submit">Clear</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div class="d-flex justify-content-around">
+    <div id="editor">
+      <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px;">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+          <svg class="bi me-2" width="40" height="32">
+            <use xlink:href="#bootstrap"></use>
+          </svg>
+          <span class="fs-4">Editor</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <a href="#" class="nav-link link-dark" aria-current="page" onclick="main('cube', 36)">
+              <svg class="bi me-2" width="16" height="16">
+                <use xlink:href="#home"></use>
+              </svg>
+              Cube
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link link-dark" onclick="main('pyramid', 18)">
+              <svg class="bi me-2" width="16" height="16">
+                <use xlink:href="#speedometer2"></use>
+              </svg>
+              Pyramid
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link link-dark" onclick="main('cone', 30)">
+              <svg class="bi me-2" width="16" height="16">
+                <use xlink:href="#table"></use>
+              </svg>
+              Cone
+            </a>
+          </li>
+        </ul>
+        <hr>
+        <div class="dropdown">
+          <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
+            <li><a class="dropdown-item" href="#">New project...</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- canvas element with size attributes!! -->
+    <canvas id="gl-canvas" class="p-2" width="800" height="800">
+      Oops ... your browser doesn't support the HTML5 canvas element
+    </canvas>
+  </div>
+</body>
+
+</html>

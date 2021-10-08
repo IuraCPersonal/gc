@@ -1,0 +1,14 @@
+#gl-canvas {
+  border: 1px solid #D8DEE9;
+  border-radius: 24px;
+  margin: 5%;
+  width: 600px;
+}
+
+#editor {
+  margin-top: 5%;
+}
+
+.form-range {
+  width: 160px;
+}
