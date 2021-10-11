@@ -9,6 +9,10 @@
   margin-top: 5%;
 }
 
+.flex-column {
+  border-radius: 12px;
+}
+
 .form-range {
   width: 160px;
 }

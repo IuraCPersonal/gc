@@ -8,7 +8,7 @@ let view_z = 0.0;
 // Start Here
 //
 
-const main = (input, vertexCount) => {
+const main = (input) => {
   //Setup our canvas and gl
   const canvas = document.getElementById("gl-canvas");
   const gl = canvas.getContext("webgl");
@@ -156,18 +156,21 @@ const drawScene = (gl, programInfo, buffers, vertexCount) => {
     modelViewMatrix, // matrix to translate
     [-0.0, 0.0, -6.0]
   ); // amount to translate
+
   mat4.rotate(
     modelViewMatrix, // destination matrix
     modelViewMatrix, // matrix to rotate
     (view_z += 0.001), // amount to rotate in radians
     [0, 0, 1]
   ); // axis to rotate around (Z)
+
   mat4.rotate(
     modelViewMatrix, // destination matrix
     modelViewMatrix, // matrix to rotate
     (view_x += 0.001), // amount to rotate in radians
     [0, 1, 0]
   ); // axis to rotate around (X)
+
   mat4.rotate(
     modelViewMatrix, // destination matrix
     modelViewMatrix, // matrix to rotate
@@ -217,6 +220,7 @@ const drawScene = (gl, programInfo, buffers, vertexCount) => {
   }
 
   // Tell WebGL which indices to use to index the vertices
+
   gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, buffers.indices);
 
   // Tell WebGL to use our program when drawing
@@ -316,7 +320,7 @@ const get_object = (input) => {
     ];
     indices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
   } else if (input.toLowerCase() == "cone") {
-    let sides = 10;
+    let sides = 8;
     let height = 1.0;
     let stepTheta = 2 * Math.PI / sides;
     let verticesPerCap = 9 * sides;
@@ -330,7 +334,7 @@ const get_object = (input) => {
 
     // Bottom Cap
     theta = 0;
-    for (let i = 0; i < verticesPerCap; i += 9) {
+    for (; i < verticesPerCap; i += 9) {
       positions[i] = Math.cos(theta);
       positions[i + 1] = -height;
       positions[i + 2] = Math.sin(theta);
@@ -364,28 +368,6 @@ const get_object = (input) => {
 
     indices = new Array(positions.length / 3);
     for (i = 0; i < indices.length; ++i) indices[i] = i;
-
-    function sub(a, b) { return [a[0] - b[0], a[1] - b[1], a[2] - b[2]]; };
-    function cross(a, b) {
-      return [
-        a[1] * b[2] - a[2] * b[1],
-        a[2] * b[0] - a[0] * b[2],
-        a[0] * b[1] - a[1] * b[0]
-      ];
-    };
-
-    // function normalize(a) {
-    //   let length = a[0] * a[0] + a[1] * a[1] + a[2] * a[2];
-    //   return [a[0] / length, a[1] / length, a[2] / length];
-    // };
-
-    // for (let i = 0; i < positions.length; i += 9) {
-    //   let a = [positions[i], positions[i + 1], positions[i + 2]];
-    //   let b = [positions[i + 3], positions[i + 4], positions[i + 5]];
-    //   let c = [positions[i + 6], positions[i + 7], positions[i + 8]]
-    //   let normal = normalize(cross(sub(a, b), sub(a, c)));
-    //   normals = normals.concat(normal, normal, normal);
-    // }
   }
   return {
     positions: positions,

@@ -70,12 +70,10 @@
     </div>
   </nav>
   <div class="d-flex justify-content-around">
+    <!-- EDITOR -->
     <div id="editor">
       <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px;">
         <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-          <svg class="bi me-2" width="40" height="32">
-            <use xlink:href="#bootstrap"></use>
-          </svg>
           <span class="fs-4">Rotation</span>
         </a>
         <hr>
@@ -102,9 +100,6 @@
         </ul>
         <hr>
         <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-          <svg class="bi me-2" width="40" height="32">
-            <use xlink:href="#bootstrap"></use>
-          </svg>
           <span class="fs-4">Scaling</span>
         </a>
         <hr>
@@ -130,9 +125,6 @@
         </ul>
         <hr />
         <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-          <svg class="bi me-2" width="40" height="32">
-            <use xlink:href="#bootstrap"></use>
-          </svg>
           <span class="fs-4">Moving</span>
         </a>
         <hr>
@@ -154,6 +146,49 @@
             <div class="d-flex align-items-center">
               <span class="me-3 m-1">Z</span>
               <input type="range" class="form-range" id="pos_z" min="20" max="200">
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- CAMERA -->
+    <div id="editor" class="camera">
+      <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px;">
+        <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+          <span class="fs-4">FOV</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <div class="d-flex align-items-center">
+              <span class="me-3 m-1"></span>
+              <input type="range" class="form-range" id="fov">
+            </div>
+          </li>
+        </ul>
+        <hr>
+        <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+          <span class="fs-4">Near</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <div class="d-flex align-items-center">
+              <span class="me-3 m-1"></span>
+              <input type="range" class="form-range" id="zNear">
+            </div>
+          </li>
+        </ul>
+        <hr>
+        <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+          <span class="fs-4">Far</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <div class="d-flex align-items-center">
+              <span class="me-3 m-1"></span>
+              <input type="range" class="form-range" id="zFar">
             </div>
           </li>
         </ul>
