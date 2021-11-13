@@ -1,0 +1,210 @@
+ input[type="number"]::-webkit-outer-spin-button,
+ input[type="number"]::-webkit-inner-spin-button {
+     -webkit-appearance: none;
+     margin: 0;
+ }
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    font: "Roboto";
+}
+
+.column {
+    float: right;
+    height: 100%;
+}
+
+.column-full-screen {
+    height: 100vh;
+}
+
+.left {
+    width: 80%;
+}
+
+.right {
+
+    width: 20%;
+    overflow-y: auto;
+}
+
+.row {
+
+    float: top;
+    width: 100%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.hierarchy-component {
+    height: 100px;
+}
+
+.transform-component {
+    height: 250px;
+}
+
+.camera-component {
+    height: 230px;
+}
+
+.light-source-component {
+    height: 175px;
+}
+
+.renderer {
+    height: 150px;
+}
+
+
+.input-column {
+    padding: 0;
+    display: block;
+    overflow: hidden;
+    float: left;
+}
+
+.input-vector3 {
+    width: 60%;
+}
+
+.input-float {
+    width: 100%;
+}
+
+.label-column {
+    float: left;
+    width: 30%;
+    color: white;
+}
+
+.field-name {
+    width: 32%;
+    padding-left: 10px;
+    color: white;
+}
+
+.field-value {
+    width: 60%;
+    float: left;
+}
+
+.component-name {
+    background-color: #0096FF;
+    padding-left: 30px;
+}
+
+.component-name p {
+    font-size: 140%;
+    padding: 3px;
+    margin: 0 0 10px;
+    font-weight: bold;
+    color: white;
+}
+
+.component-value {
+    background-color: #0F52BA;
+}
+
+.vector3-field {
+    float: left;
+    width: 33%;
+}
+
+.float-field {
+    float: left;
+    width: 100%;
+}
+
+.canvas {
+    background-color: #0F52BA;
+    width: 100%;
+    height: 100%;
+}
+
+.hierarchy {
+    height: 120px;
+    overflow-y: auto;
+}
+
+.hierarchy a {
+    color: white;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.hierarchy a:hover {
+    background-color: #0096FF;
+}
+
+.hierarchy a.active {
+    background-color:#0096FF;;
+    color: white;
+}
+
+.transform {
+    height: 135px;
+}
+
+.ui-side {
+    background-color: #0F52BA;
+}
+
+.hierarchy-button {
+    background-color: #0096FF;
+    height: 25px;
+    width: 50px;
+    padding: 0;
+    cursor: pointer;
+    margin-left: 25px;
+    font-size: 15px;
+    font: "Roboto";
+}
+
+.component-single-field {
+    padding-bottom: 4px;
+    padding-top: 4px;
+}
+
+.dropdown-content {
+    display: none;
+    position: relative;
+    background-color: #0096FF;
+    min-width: 160px;
+    overflow: auto;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {
+    background-color: #0F52BA;
+}
+
+.show {
+    display: block;
+}
+
+.upload-mesh {
+    display: none;
+}
+
+
+
+
+
