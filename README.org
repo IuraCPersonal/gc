@@ -1,0 +1,28 @@
+#+TITLE: COMPUTER GRAPHICS
+#+AUTHOR: FCIM FAF 203 Cius Iurie
+
+** 👋 TABLE OF CONTENTS :toc:
+  - [[#-introduction][📑 INTRODUCTION]]
+  - [[#-progress][🎯 PROGRESS]]
+  - [[#-contact][📮 CONTACT]]
+
+** 📑 INTRODUCTION
+
+*** About this Repository
+
+This repository contains homework assignments and laboratory works for the =GC= course here at =TUM FCIM=.
+
+All the solutions are written in =JS=.
+
+** 🎯 PROGRESS
+
+| Laboratory No. | Status | Grade  |
+|----------------+--------+--------|
+| [[https://github.com/IuraCPersonal/gc/tree/main/LAB1][LAB 01]]   | =DONE= | =10=    |
+| [[https://github.com/IuraCPersonal/gc/tree/main/LAB2][LAB 02]]   | =DONE= | =10=    |
+| [[https://github.com/IuraCPersonal/gc/tree/main/LAB2][LAB 03]]   | =DONE= | =10=    |
+|----------------+--------+--------|
+
+** 📮 CONTACT
+
+If you have any question, please contact me through email: =iurie.cius@isa.utm.md=.
